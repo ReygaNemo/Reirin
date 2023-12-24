@@ -30,7 +30,7 @@ class AppointmentSeeder extends Seeder
                 
                 'employee_service_id' => 'ES02',
                 'customer_id' => 'C003',
-                'appstatus_id' => 2,
+                'appstatus_id' => 1,
                 
                 'payment_type_id' => 'PT01',
             ],
@@ -39,7 +39,7 @@ class AppointmentSeeder extends Seeder
 
                 'employee_service_id' => 'ES01',
                 'customer_id' => 'C001',
-                'appstatus_id' => 3,
+                'appstatus_id' => 1,
                 
                 'payment_type_id' => 'PT02',
             ],
@@ -48,7 +48,7 @@ class AppointmentSeeder extends Seeder
 
                 'employee_service_id' => 'ES03',
                 'customer_id' => 'C002',
-                'appstatus_id' => 4,
+                'appstatus_id' => 1,
                 
                 'payment_type_id' => 'PT03',
             ],

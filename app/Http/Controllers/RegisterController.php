@@ -40,7 +40,7 @@ class RegisterController extends Controller
         if (preg_match('/[A-Z]/', $value) && strlen($value) > 5) {
             return true;
         } else {
-            $errorMsg[] = 'Password must contain at least 1 uppercase letter and be more than 10 characters long.';
+            $errorMsg[] = 'Password must contain at least 1 uppercase letter and be more than 5 characters long.';
         }
     }
     public function validEmail($value, &$errorMsg)
