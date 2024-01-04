@@ -10,9 +10,8 @@ class Appointment extends Model
     use HasFactory;
 
     protected $table = 'appointments';
-    protected $primaryKey = 'appointment_id';
-    protected $keyType = 'string';
-    public $incrementing = false;
+    protected $fillable = ["employee_service_id", "appstatus_id", "customer_id", "payment_type_id", "appointment_id"];
+
     public function appstatus()
     {
         return $this->belongsTo(AppStatus::class, 'appstatus_id', 'appstatus_id');

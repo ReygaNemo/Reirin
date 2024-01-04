@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('employee_phone');
             $table->string('employee_address');
             $table->string('employee_img');
-            $table->string('employee_role');
             $table->timestamps();
         });
     }
