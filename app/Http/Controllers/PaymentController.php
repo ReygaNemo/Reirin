@@ -36,9 +36,10 @@ class PaymentController extends Controller
         //show the tanggal selected
         $selectedDate = $request->session()->get('selected_date');
         // Parse the chosenDate using Carbon
-        $carbonDate = Carbon::createFromFormat('m/d/Y h:i A', $selectedDate);
+        // $carbonDate = Carbon::createFromFormat('m/d/Y', $selectedDate);
         // Extract date and time components
-        $date = $carbonDate->toDateString(); // YYYY-MM-DD
+        // $date = $carbonDate->toDateString(); // YYYY-MM-DD
+        $date = $selectedDate;
         $time = $selectedEmployeeService->time_available;
         // $time = $carbonDate->format('h:i A');
 

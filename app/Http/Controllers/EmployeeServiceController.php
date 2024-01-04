@@ -9,7 +9,7 @@ class EmployeeServiceController extends Controller
 {
     public function index()
     {
-        //
+        
     }
 
 }

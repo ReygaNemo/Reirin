@@ -14,7 +14,11 @@ class AppointmentController extends Controller
     public function showAllAppointment(Request $request)
     {
         $user = Auth::user();
-        $appointments = Appointment::where('customer_id', $user->customer_id)->get();
+        if($user){
+            $appointments = Appointment::where('customer_id', $user->customer_id)->get();
+            return view('myappointment', array_merge(compact('appointments'), ["title" => "myappointment"]));
+        }
+        $appointments = null;
         return view('myappointment', array_merge(compact('appointments'), ["title" => "myappointment"]));
     }
     public function appointmentSelected(Request $request)
@@ -48,8 +52,8 @@ class AppointmentController extends Controller
         $chosenDate = $request->input('chosenDate');
         $selectedServiceId = $request->session()->get('selected_service');
         $selectedService = Service::where('service_id', $selectedServiceId)->first();
-        $formattedDate = Carbon::createFromFormat('m/d/Y h:i A', $chosenDate)->format('Y-m-d');
-        $emp = EmployeeService::where('date_available', $formattedDate)->where('is_available', true)->where('service_id', $selectedServiceId)->get();
+        // $formattedDate = Carbon::createFromFormat('m/d/Y h:i A', $chosenDate)->format('Y-m-d');
+        $emp = EmployeeService::where('date_available', $chosenDate)->where('is_available', true)->where('service_id', $selectedServiceId)->get();
         $request->session()->put('selected_date', $chosenDate);
         return view('appointment1', [
             'selectedService' => $selectedService,

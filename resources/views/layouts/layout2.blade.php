@@ -10,14 +10,14 @@
 </head>
 
 <body>
-  <div class="container mt-4">
+  <div class="container mt-5">
     @yield('container')
   </div>
 </body>
-<footer>
+<!-- <footer>
   <div class="card text-bg-dark mt-4">
     <img src="pic\banner2.png" class="card-img"  alt="...">
   </div>
-</footer>
+</footer> -->
 
 </html>

@@ -7,6 +7,7 @@ use App\Models\Employee;
 use App\Models\Promo;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
@@ -26,4 +27,15 @@ public function index()
         "promo" => $promo
     ]);
 }
+
+public function showProfile()
+{
+    $user = Auth::user();
+    
+    return view('editProfile', [
+        "user" => $user,
+        "title" => "Profile"
+    ]);
+}
+
 }

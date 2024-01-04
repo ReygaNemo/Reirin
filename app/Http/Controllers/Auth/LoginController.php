@@ -25,7 +25,8 @@ class LoginController extends Controller
         //$errors = ["Invalid Credentials"];
         if ($customer && ($credentials['password'] == $customer->password)) {
             Auth::login($customer);
-            return redirect()->route('showHome');
+            if($customer->customer_role == 1) return redirect()->route('showHome');
+            else return redirect('/admin');
         } else {
             return view('login')->with('errors', $credentials);
         }

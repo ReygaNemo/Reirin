@@ -1,9 +1,12 @@
 @php
     $user = Auth::user();
 @endphp
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg_navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">ReiRinSalon</a>
+        <!-- <a class="navbar-brand" href="/">ReiRinSalon</a> -->
+        <a class="navbar-brand h-100" href="/">
+            <img src="pic\logo.png" style="height: 40px" class="mt-0" alt="...">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,11 +28,16 @@
         </div>
         @if($user)
         <a class="nav-link {{ ($title === 'MyAppointment') ? 'active' : '' }}" href="/editprofile">Profile</a>
-        <a class="nav-link" href="{{ route('logout') }}">logout</a>
+        <a class="nav-link mx-3" href="{{ route('logout') }}">Logout</a>
         @else
-        <a class="nav-link" href="{{ route('loginpage') }}">login</a>
-        <a class="nav-link" href="{{ route('registerpage') }}">register</a>
+        <a class="nav-link" href="{{ route('loginpage') }}">Login</a>
+        <a class="nav-link mx-3" href="{{ route('registerpage') }}">Register</a>
         @endif
         <br>
     </div>
 </nav>
+<style>
+    /* nav{
+        background-color: #F8ECE9;
+    } */
+</style>
